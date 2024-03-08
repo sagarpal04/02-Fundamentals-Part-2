@@ -1,18 +1,14 @@
 "use strict";
 
-const jonas = [
-  "Jonas",
-  "Schmedtmann",
-  2037 - 1991,
-  "teacher",
-  ["Michael", "Peter", "Steven"],
-  true,
-];
-for (let i = jonas.length - 1; i >= 0; i -= 1) {
-  console.log(jonas[i]);
+let rep = 1;
+while (rep <= 10) {
+  console.log(`Lifting weights repetition ${rep} 🏋️`);
+  rep += 1;
 }
-for (let level = 1; level <= 5; level += 1) {
-  for (let step = 1; step <= 4; step += 1) {
-    console.log(`Level : ${level} and Step : ${step}`);
-  }
+
+let dice = Math.trunc(Math.random() * 6 + 1);
+while (dice !== 6) {
+  console.log(`Dice -> ${dice}`);
+  dice = Math.trunc(Math.random() * 6 + 1);
+  if (dice === 6) console.log("Loop is about to end...");
 }
