@@ -1,33 +1,22 @@
 "use strict";
-const friends = ["Michael", "Steven", "Peter"];
-
-// Add elements
-const newLength = friends.push("Jay");
-console.log(friends);
-console.log(newLength);
-
-friends.unshift("John");
-console.log(friends);
-
-// Remove elements
-friends.pop();
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
-
-friends.shift();
-console.log(friends);
-
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("Bob"));
-
-friends.push(23);
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
-console.log(friends.includes(23));
-
-if (friends.includes("Steven")) {
-  console.log("You have a friend called Steven");
-} else {
-  console.log("Someone else");
-}
+const calcTip = function (bills) {
+  const x = [];
+  for (let i = 0; i < bills.length; i += 1) {
+    let tipValue =
+      300 >= bills[i] && bills[i] >= 50 ? bills[i] * 0.15 : bills[i] * 0.2;
+    x.push(tipValue);
+  }
+  return x;
+};
+const calcTotal = function (bills, tips) {
+  const y = [];
+  for (let i = 0; i < bills.length; i += 1) {
+    y.push(bills[i] + tips[i]);
+  }
+  return y;
+};
+const bills = [125, 555, 44];
+const tips = calcTip(bills);
+const totals = calcTotal(bills, tips);
+console.log(tips);
+console.log(totals);
