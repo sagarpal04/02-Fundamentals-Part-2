@@ -1,25 +1,31 @@
 "use strict";
 
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  birthYear: 1980,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriversLicense: false,
-  calcAge: function () {
-    this.age = new Date().getFullYear() - this.birthYear;
-    return this.age;
-  },
-  getSummary: function () {
-    return `${this.firstName} is a ${this.age}-year old ${
-      this.job
-    }, and he has ${this.hasDriversLicense ? "a" : "don't"} driver's licene`;
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
   },
 };
-console.log(jonas.calcAge());
-console.log(jonas["calcAge"]());
-console.log(jonas.age);
-console.log(jonas["age"]);
 
-console.log(jonas.getSummary());
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+
+if (john.calcBMI() > mark.calcBMI()) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})`
+  );
+} else {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`
+  );
+}
